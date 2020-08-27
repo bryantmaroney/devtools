@@ -1,0 +1,5 @@
+src_host="HOST"
+src_user="USER"
+src_password="PASS"
+src_port="3306"
+src_database="DB"

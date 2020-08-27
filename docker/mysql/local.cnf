@@ -1,0 +1,7 @@
+# Additional config settings specific to our environment
+[mysqld]
+wait_timeout            = 28800
+max_connections         = 151
+connect_timeout         = 10
+innodb_buffer_pool_size = 512M
+innodb_log_file_size    = 128MB

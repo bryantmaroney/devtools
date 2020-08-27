@@ -1,0 +1,5 @@
+dest_host="HOST"
+dest_user="USER"
+dest_password="PASS"
+dest_port="3306"
+dest_database="DB"

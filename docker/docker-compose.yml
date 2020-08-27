@@ -1,0 +1,31 @@
+# Docker environment for StepStoneConnect
+# Versions chosen to match production environment
+
+# Source:https://gist.github.com/karlisabe/f7d91594c004e227e504473ce2c60508
+
+version: "3"
+
+services:
+  apache-php:
+    image: php:7.3.20-apache
+    build: ./apache-php
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ../app:/var/www/html
+  mysql:
+    image: mysql:5.7.25
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: texasvoterguide
+      MYSQL_USER: tvg
+      MYSQL_PASSWORD: password
+    ports:
+      - 8885:3306
+    volumes:
+      - ./mysql/local.cnf:/etc/mysql/conf.d/local.cnf
+      - texasvoterguide-mysql-data:/var/lib/mysql
+volumes:
+  texasvoterguide-mysql-data:
